@@ -97,3 +97,4 @@ avgerage_fare.plot(yerr=std_fare,kind='bar',legend=False)
 
 sns.barplot(x='Survived', hue="Pclass", data=titanic_df, order=[1,0], ax=axis2)
 sns.plt.show()
+
