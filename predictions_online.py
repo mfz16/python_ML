@@ -16,8 +16,8 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.naive_bayes import GaussianNB
 
 # get titanic & test csv files as a DataFrame
-titanic_df = pd.read_csv("D:/datasets/titanic/train.csv")
-test_df = pd.read_csv("D:/datasets/titanic/test.csv")
+titanic_df = pd.read_csv("E:/datasets/titanic/train.csv")
+test_df = pd.read_csv("E:/datasets/titanic/test.csv")
 titanic_df = titanic_df.drop(['PassengerId','Name','Ticket'], axis=1)
 test_df    = test_df.drop(['Name','Ticket'], axis=1)
 titanic_df.drop(['Embarked'], axis=1,inplace=True)

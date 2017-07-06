@@ -19,8 +19,8 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.naive_bayes import GaussianNB
 
 # get titanic & test csv files as a DataFrame
-titanic_df = pd.read_csv("D:/datasets/titanic/train.csv")
-test_df = pd.read_csv("D:/datasets/titanic/test.csv")
+titanic_df = pd.read_csv("E:/datasets/titanic/train.csv")
+test_df = pd.read_csv("E:/datasets/titanic/test.csv")
 
 # preview the data
 print (titanic_df.head())
@@ -35,7 +35,7 @@ titanic_df["Embarked"] = titanic_df["Embarked"].fillna("S")
 # plot
 sns.factorplot('Embarked','Survived', data=titanic_df)
 
-fig, (axis1,axis2,axis3) = plt.subplots(1,3,figsize=(15,5))
+hhg, (axis1,axis2,axis3) = plt.subplots(1,3,figsize=(15,5))
 
 # sns.factorplot('Embarked',data=titanic_df,kind='count',order=['S','C','Q'],ax=axis1)
 # sns.factorplot('Survived',hue="Embarked",data=titanic_df,kind='count',order=[1,0],ax=axis2)
@@ -84,7 +84,7 @@ std_fare      = DataFrame([fare_not_survived.std(), fare_survived.std()])
 
 # plot
 titanic_df['Fare'].plot(kind='hist', figsize=(15,3),bins=100, xlim=(0,50))
-
+plt.show()
 avgerage_fare.index.names = std_fare.index.names = ["Survived"]
 avgerage_fare.plot(yerr=std_fare,kind='bar',legend=False)
 #mosaic(myDataframe, ['size', 'length'])

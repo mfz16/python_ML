@@ -1,5 +1,5 @@
 import scipy as sp
-data = sp.genfromtxt("d:/datasets/web_traffic.tsv")
+data = sp.genfromtxt("E:/datasets/web_traffic.tsv")
 #print(data[:10])
 x = data[:,0]
 y = data[:,1]
@@ -39,7 +39,6 @@ def error(f, x, y):
 fp1, residuals, rank, sv, rcond = sp.polyfit(x, y, 1, full=True)
 print("Model parameters: %s" % fp1)
 print (residuals)
-
 f1 = sp.poly1d(fp1)
 print(error(f1, x, y))
 
@@ -73,8 +72,7 @@ scatterplot()
 plt.legend(["d1","d2","d3","d10","d53"], loc="upper left")
 #plt.legend(["d=%i" % c for c in range(10)], loc="upper left")    #'week %i' % w for w in range(10)
 
-inflection = 3.5*7*24 # calculate the inflection point in hours
-
+inflection = int(3.5*7*24) # calculate the inflection point in hours
 xa = x[:inflection] # data before the inflection point
 ya = y[:inflection]
 xb = x[inflection:] # data after
